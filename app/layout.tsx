@@ -1,14 +1,16 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
-  description: "Built with Next.js & Shadcn UI",
+  title: "VincTech | Personal Portfolio",
+  description: "Personal portfolio built with Next.js and Shadcn UI",
 };
 
 export default function RootLayout({
@@ -18,9 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-background text-foreground`}>
+      <body className={`${inter.variable} min-h-screen bg-background text-foreground`}>
         <Navbar />
-        <main className="container mx-auto px-4 py-8 max-w-5xl">
+
+        <main className="container mx-auto max-w-5xl px-4 py-8">
           {children}
         </main>
       </body>
