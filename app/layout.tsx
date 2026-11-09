@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,12 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} min-h-screen bg-background text-foreground`}>
+      <body
+        className={`${inter.variable} min-h-screen bg-background text-foreground antialiased`}
+      >
         <Navbar />
 
-        <main className="container mx-auto max-w-5xl px-4 py-8">
-          {children}
-        </main>
+        {children}
+
       </body>
     </html>
   );
